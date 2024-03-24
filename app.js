@@ -1,4 +1,9 @@
 window.onload = function() {
+    if (isMobile()) {
+        alert("Move your finger and see the magic!");
+    } else {
+        alert("Move your cursor and see the magic!");
+    }
 	$("#splash").hide();
 };
 
@@ -35,4 +40,8 @@ function get_random_color() {
     var s = rand(30, 100); // saturation 30-100%
     var l = rand(30, 70); // lightness 30-70%
     return 'hsl(' + h + ',' + s + '%,' + l + '%)';
+}
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
